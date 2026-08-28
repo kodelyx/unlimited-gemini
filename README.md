@@ -33,7 +33,7 @@ Zero API keys required. No rate-limit fees. Works out of the box.
 3. Click **Load unpacked** and select the [`chrome-extension/`](./chrome-extension) folder.
 4. Visit [gemini.google.com](https://gemini.google.com) once to initialize session cookies.
 
-### 2. Install Python SDK
+### 2. Install Python Engine
 ```bash
 cd gemini-engine
 pip install -e .
@@ -46,7 +46,7 @@ python test.py
 
 ---
 
-## 🚀 Python SDK Quickstart
+## 🚀 Python Engine Quickstart
 
 ### 💬 1. Text Chat & Code Reasoning (Gemini 3.7 Flash)
 ```python
