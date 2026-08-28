@@ -35,7 +35,7 @@ Zero API keys required. No rate-limit fees. Works out of the box.
 
 ### 2. Install Python SDK
 ```bash
-cd python-sdk
+cd gemini-engine
 pip install -e .
 ```
 
