@@ -55,22 +55,31 @@ print(engine.analyze_file("sample_doc.pdf", prompt="Summarize this document"))
 
 ---
 
-## 🌐 Simple cURL / HTTP REST API
+## 🌐 Simple cURL / HTTP Requests (Any Language)
 
-The local engine also exposes a standard REST API on port `8001` for any language (cURL, Node.js, Go, Rust):
-
-```bash
-# Simple Chat Request
-curl -X POST http://127.0.0.1:8001/chat \
-  -H "Content-Type: application/json" \
-  -d '{"prompt": "Hello Gemini!"}'
-```
+Call the local engine directly on port `8001` with zero setup:
 
 ```bash
-# OpenAI SDK Compatible Endpoint
-curl -X POST http://127.0.0.1:8001/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -d '{"model": "gemini-3.7-flash", "messages": [{"role": "user", "content": "Hello!"}]}'
+# 💬 Text Chat
+curl http://127.0.0.1:8001/chat -d '{"prompt": "Why is Python popular?"}'
+
+# ⚡ Streaming (Typing Effect)
+curl http://127.0.0.1:8001/chat -d '{"prompt": "Count 1 to 5", "stream": true}'
+
+# 🎨 8K Image (Nano Banana 2)
+curl http://127.0.0.1:8001/chat -d '{"prompt": "Generate an image of a red sports car in 16:9"}'
+
+# 🎬 HD Video (Gemini Omni)
+curl http://127.0.0.1:8001/chat -d '{"prompt": "Generate a 24fps cinematic video of eagle flying"}'
+
+# 🎵 Music Synthesis
+curl http://127.0.0.1:8001/music -d '{"prompt": "Create an instrumental piano melody track"}'
+
+# 👁️ Vision / PDF / Media Analysis
+curl http://127.0.0.1:8001/chat -F "prompt=Summarize this" -F "images=@document.pdf"
+
+# 🔌 OpenAI Drop-In Endpoint
+curl http://127.0.0.1:8001/v1/chat/completions -d '{"messages": [{"role": "user", "content": "Hello!"}]}'
 ```
 
 ---
