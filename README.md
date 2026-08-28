@@ -5,9 +5,10 @@
 [![Architecture: Cross-Platform](https://img.shields.io/badge/platform-macOS%20|%20Linux%20|%20Windows-success.svg)](#)
 [![Zero Cost](https://img.shields.io/badge/API%20Cost-%240%20Unlimited-brightgreen.svg)](#)
 
-A high-performance, zero-configuration Python engine and Chrome Extension bridge for **Google Gemini 3.7**, **Imagen 3 (8K Images)**, **Gemini Omni (HD Videos)**, **Instrumental Music Synthesis**, and **Embedded SQLite Memory**.
+> **Free, unlimited, multi-modal Google Gemini 3.7 AI Engine for Python.**  
+> **Inbuilt Tool Calling • 8K Images (Nano Banana 2) • HD Videos (Gemini Omni) • Studio Audio • Multimodal Vision & SQLite Memory.**
 
-Zero API keys required. No rate-limit fees. Works out of the box.
+**Zero API keys required • No rate-limit fees • Works out-of-the-box**
 
 ---
 
@@ -71,7 +72,7 @@ reply = chat.send("What is my name and what am I building?")
 print(reply)  # Context is remembered across turns
 ```
 
-### 🎨 4. 8K Image Generation (Imagen 3)
+### 🎨 4. 8K Image Generation (Nano Banana 2 / Imagen 3)
 ```python
 # Watermark-free, ultra-HD 16:9 illustration
 img = engine.generate_image("A futuristic cyber kitten on a neon city rooftop in 16:9", save_to="kitten.png")
@@ -100,7 +101,14 @@ print(engine.analyze_file("recording.mp4", prompt="Summarize what happens in thi
 print(engine.analyze_document("paper.pdf", prompt="Extract the key findings."))
 ```
 
-### 🗄️ 8. Embedded SQLite History Search
+### 🛠️ 8. Inbuilt Tool Calling & Code Execution
+```python
+# Autonomous tool execution (live web search, python sandbox, calculations)
+reply = engine.chat("Calculate the 100th Fibonacci number using Python and tell me the result.")
+print(reply)
+```
+
+### 🗄️ 9. Embedded SQLite History Search
 ```python
 # Fast keyword search across past chat history
 results = engine.search_history("metaclasses", limit=5)
@@ -115,9 +123,10 @@ for item in results:
 | Capability | Model / Engine | Quality / Output | Local Save |
 |---|---|---|---|
 | **Text Reasoning** | Gemini 3.7 Flash | Markdown & Code | SQLite WAL |
+| **Inbuilt Tool Calling** | Python Sandbox & Web | Autonomous execution | SQLite WAL |
 | **Streaming** | Server-Sent Events | Low latency tokens | SQLite WAL |
 | **Stateful Memory** | Session Manager | Multi-turn context | SQLite WAL |
-| **Image Generation** | Google Imagen 3 | 8K Ultra-HD (16:9 / 1:1) | `.png` |
+| **Image Generation** | Nano Banana 2 (Imagen 3) | 8K Ultra-HD (16:9 / 1:1) | `.png` |
 | **Video Generation** | Gemini Omni | 24 FPS Cinematic Video | `.mp4` |
 | **Music Synthesis** | Google Lyria / Music | 192 kbps Stereo Audio | `.mp3` |
 | **Multimodal Vision** | Gemini 3.7 Multimodal | Text / PDF / Media Analysis | Live Reply |
